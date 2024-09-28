@@ -28,7 +28,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.10.1</version> <!-- Updated to the latest version -->
+                <version>3.10.1</version> <!-- Ensure this is a compatible version -->
                 <configuration>
                     <source>21</source>
                     <target>21</target>
@@ -37,7 +37,7 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.7</version>
+                <version>0.8.10</version> <!-- Updated to the latest stable version -->
                 <executions>
                     <execution>
                         <goals>
@@ -50,13 +50,18 @@
                         <goals>
                             <goal>report</goal>
                         </goals>
+                        <configuration>
+                            <excludes>
+                                <exclude>sun/**</exclude> <!-- Exclude all classes from the sun package -->
+                            </excludes>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0-M5</version>
+                <version>3.0.0-M5</version> <!-- Ensure this version works with Java 21 -->
             </plugin>
         </plugins>
     </build>

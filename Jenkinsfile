@@ -2,12 +2,12 @@ pipeline {
     agent any
     tools {
         maven 'Maven3'  // Ensure Maven is installed
-        jdk 'JDK21'     // Ensure JDK 22 is installed
+        jdk 'JDK21'     // Ensure JDK is installed
     }
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/eetuam1/DiceRoll.git'
+                git 'https://github.com/eetuam1/DiceRoll.git'
             }
         }
         stage('Build') {
@@ -37,3 +37,5 @@ pipeline {
         }
     }
 }
+
+
